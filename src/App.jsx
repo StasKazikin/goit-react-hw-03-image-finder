@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Searchbar from './components/Searchbar';
 import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { fetchImages } from './services/pixabay-api';
 import ImageGallery from './components/ImageGallery';
 import Button from './components/Button';
@@ -81,7 +82,13 @@ class App extends Component {
         {error && <p>Ой ошибка, всё пропало!!!</p>}
         <ImageGallery images={images} onClick={this.toggleModal} />
         {isLoading && (
-          <Loader type="Audio" color="#00BFFF" height={80} width={80} />
+          <Loader
+            className="Loader"
+            type="Audio"
+            color="#00BFFF"
+            height={80}
+            width={80}
+          />
         )}
         <Button
           images={images}
